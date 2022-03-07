@@ -30,9 +30,8 @@
 
 import Foundation
 
-#if os(iOS) || os(tvOS) || os(watchOS)
-
-import UIKit
+import UXKit
+import CoreGraphics
 
 public enum SystemFonts: String, FontConvertible {
 	
@@ -305,7 +304,7 @@ public enum SystemFonts: String, FontConvertible {
 	///
 	/// - Parameter size: size of the font in points; `nil` to use system font size.
 	/// - Returns: instance of the font.
-	public func font(size: CGFloat?) -> Font {
+    public func font(size: CGFloat?) -> Font {
 		#if os(tvOS)
 		return Font(name: self.rawValue, size: (size ?? TVOS_SYSTEMFONT_SIZE))!
 		#elseif os(watchOS)
@@ -316,5 +315,3 @@ public enum SystemFonts: String, FontConvertible {
 	}
 
 }
-
-#endif

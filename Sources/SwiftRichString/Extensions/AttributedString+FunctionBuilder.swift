@@ -30,7 +30,7 @@
 
 import Foundation
 
-@_functionBuilder
+@resultBuilder
 public class AttributedStringBuilder {
     public static func buildBlock(_ components: AttributedString...) -> AttributedString {
         let result = NSMutableAttributedString(string: "")

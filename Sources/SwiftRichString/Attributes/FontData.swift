@@ -172,7 +172,7 @@ public struct FontData {
 	public func attributes(currentFont: FontConvertible?, size currentSize: CGFloat?) -> [NSAttributedString.Key:Any] {
 		var finalAttributes: [NSAttributedString.Key:Any] = [:]
 
-		// generate an initial font from passed FontConvertible instance
+        // generate an initial font from passed FontConvertible instance
 		guard let size = (self.size ?? currentSize) else { return [:] }
 		guard var finalFont = (self.font ?? currentFont)?.font(size: size) else { return [:] }
 		
