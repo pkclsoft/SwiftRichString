@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "UXKit",
+        "repositoryURL": "https://github.com/pkclsoft/UXKit.git",
+        "state": {
+          "branch": null,
+          "revision": "d913e5bae9254b21559cda88c17246eb8f19387f",
+          "version": "0.10.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
