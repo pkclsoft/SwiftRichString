@@ -5,9 +5,9 @@
         "package": "UXKit",
         "repositoryURL": "https://github.com/pkclsoft/UXKit.git",
         "state": {
-          "branch": null,
-          "revision": "d913e5bae9254b21559cda88c17246eb8f19387f",
-          "version": "0.10.0"
+          "branch": "feature/accessibility",
+          "revision": "1f59f5df605050165b8a1e143bd4c7283cc91da8",
+          "version": null
         }
       }
     ]
