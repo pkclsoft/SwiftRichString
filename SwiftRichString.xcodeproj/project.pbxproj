@@ -243,6 +243,9 @@
 		8933C78F1EB5B82C000D00A4 /* SwiftRichStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* SwiftRichStringTests.swift */; };
 		8933C7901EB5B82D000D00A4 /* SwiftRichStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* SwiftRichStringTests.swift */; };
 		D05A6C5F27D6E81500405E7E /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D05A6C5E27D6E81500405E7E /* UXKit */; };
+		D09C613727D814DA0008C829 /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D09C613627D814DA0008C829 /* UXKit */; };
+		D09C613F27D81C940008C829 /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D09C613E27D81C940008C829 /* UXKit */; };
+		D09C614127D81CA80008C829 /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D09C614027D81CA80008C829 /* UXKit */; };
 		D53F4E7B21F03E690085D26F /* DynamicText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53F4E7A21F03E690085D26F /* DynamicText.swift */; };
 		D53F4E7C21F03EEE0085D26F /* DynamicText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53F4E7A21F03E690085D26F /* DynamicText.swift */; };
 		D53F4E7D21F03EEF0085D26F /* DynamicText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53F4E7A21F03E690085D26F /* DynamicText.swift */; };
@@ -269,13 +272,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 64507F0920B1911A009455BD;
 			remoteInfo = "ExampleWatchOS Extension";
-		};
-		64507F1920B1911B009455BD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 64507EFD20B1911A009455BD;
-			remoteInfo = ExampleWatchOS;
 		};
 		DD7502801C68FCFC006590AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -433,6 +429,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D09C614127D81CA80008C829 /* UXKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +444,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D09C613727D814DA0008C829 /* UXKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +452,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D09C613F27D81C940008C829 /* UXKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,6 +837,9 @@
 			dependencies = (
 			);
 			name = ExampleTvOS;
+			packageProductDependencies = (
+				D09C614027D81CA80008C829 /* UXKit */,
+			);
 			productName = ExampleTvOS;
 			productReference = 64507EDB20B18F0F009455BD /* ExampleTvOS.app */;
 			productType = "com.apple.product-type.application";
@@ -872,6 +874,8 @@
 			dependencies = (
 			);
 			name = "ExampleWatchOS Extension";
+			packageProductDependencies = (
+			);
 			productName = "ExampleWatchOS Extension";
 			productReference = 64507F0A20B1911A009455BD /* ExampleWatchOS Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -888,9 +892,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				64507F1A20B1911B009455BD /* PBXTargetDependency */,
 			);
 			name = ExampleiOS;
+			packageProductDependencies = (
+				D09C613627D814DA0008C829 /* UXKit */,
+			);
 			productName = ExampleiOS;
 			productReference = 648932DC209DE474000E691A /* ExampleiOS.app */;
 			productType = "com.apple.product-type.application";
@@ -908,6 +914,9 @@
 			dependencies = (
 			);
 			name = ExampleMac;
+			packageProductDependencies = (
+				D09C613E27D81C940008C829 /* UXKit */,
+			);
 			productName = ExampleMac;
 			productReference = 648932F5209DE6C5000E691A /* ExampleMac.app */;
 			productType = "com.apple.product-type.application";
@@ -980,30 +989,25 @@
 					};
 					64507EDA20B18F0F009455BD = {
 						CreatedOnToolsVersion = 9.3.1;
-						DevelopmentTeam = E5DU3FA699;
 						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 					};
 					64507EFD20B1911A009455BD = {
 						CreatedOnToolsVersion = 9.3.1;
-						DevelopmentTeam = E5DU3FA699;
 						ProvisioningStyle = Automatic;
 					};
 					64507F0920B1911A009455BD = {
 						CreatedOnToolsVersion = 9.3.1;
-						DevelopmentTeam = E5DU3FA699;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					648932DB209DE474000E691A = {
 						CreatedOnToolsVersion = 9.3;
-						DevelopmentTeam = E5DU3FA699;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					648932F4209DE6C5000E691A = {
 						CreatedOnToolsVersion = 9.3;
-						DevelopmentTeam = E5DU3FA699;
 						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 					};
@@ -1467,11 +1471,6 @@
 			target = 64507F0920B1911A009455BD /* ExampleWatchOS Extension */;
 			targetProxy = 64507F0C20B1911B009455BD /* PBXContainerItemProxy */;
 		};
-		64507F1A20B1911B009455BD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 64507EFD20B1911A009455BD /* ExampleWatchOS */;
-			targetProxy = 64507F1920B1911B009455BD /* PBXContainerItemProxy */;
-		};
 		D06CCC0927D632170029A682 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = D06CCC0827D632170029A682 /* UXKit */;
@@ -1681,6 +1680,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SwiftRichString.SwiftRichString-iOS";
 				PRODUCT_NAME = SwiftRichString;
 				SKIP_INSTALL = YES;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
@@ -1712,6 +1712,7 @@
 				PRODUCT_NAME = SwiftRichString;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
@@ -1783,7 +1784,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
 			};
 			name = Debug;
 		};
@@ -1816,7 +1817,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
 			};
 			name = Release;
 		};
@@ -1960,7 +1961,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5DU3FA699;
+				DEVELOPMENT_TEAM = YTQG85D588;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ExampleTvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1989,7 +1990,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5DU3FA699;
+				DEVELOPMENT_TEAM = YTQG85D588;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ExampleTvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2018,7 +2019,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5DU3FA699;
+				DEVELOPMENT_TEAM = YTQG85D588;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "ExampleWatchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2033,7 +2034,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
 			};
 			name = Debug;
 		};
@@ -2048,7 +2049,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5DU3FA699;
+				DEVELOPMENT_TEAM = YTQG85D588;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "ExampleWatchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2064,7 +2065,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
 			};
 			name = Release;
 		};
@@ -2081,7 +2082,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5DU3FA699;
+				DEVELOPMENT_TEAM = YTQG85D588;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = ExampleWatchOS_Extension;
 				INFOPLIST_FILE = ExampleWatchOS/Info.plist;
@@ -2091,7 +2092,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
 			};
 			name = Debug;
 		};
@@ -2108,7 +2109,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5DU3FA699;
+				DEVELOPMENT_TEAM = YTQG85D588;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = ExampleWatchOS_Extension;
 				INFOPLIST_FILE = ExampleWatchOS/Info.plist;
@@ -2119,7 +2120,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
 			};
 			name = Release;
 		};
@@ -2137,7 +2138,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5DU3FA699;
+				DEVELOPMENT_TEAM = YTQG85D588;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ExampleiOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2148,6 +2149,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftrichstring.ExampleiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				URLSERVIZI = "";
@@ -2168,7 +2170,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5DU3FA699;
+				DEVELOPMENT_TEAM = YTQG85D588;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ExampleiOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2179,6 +2181,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftrichstring.ExampleiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2202,7 +2205,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = E5DU3FA699;
+				DEVELOPMENT_TEAM = YTQG85D588;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ExampleMac/Info.plist;
@@ -2235,7 +2238,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = E5DU3FA699;
+				DEVELOPMENT_TEAM = YTQG85D588;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ExampleMac/Info.plist;
@@ -2491,6 +2494,21 @@
 		D06CCC0C27D632310029A682 /* UXKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D06CCC0127D6318F0029A682 /* XCRemoteSwiftPackageReference "UXKit" */;
+			productName = UXKit;
+		};
+		D09C613627D814DA0008C829 /* UXKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D05A6C5D27D6E81500405E7E /* XCRemoteSwiftPackageReference "UXKit" */;
+			productName = UXKit;
+		};
+		D09C613E27D81C940008C829 /* UXKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D05A6C5D27D6E81500405E7E /* XCRemoteSwiftPackageReference "UXKit" */;
+			productName = UXKit;
+		};
+		D09C614027D81CA80008C829 /* UXKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D05A6C5D27D6E81500405E7E /* XCRemoteSwiftPackageReference "UXKit" */;
 			productName = UXKit;
 		};
 /* End XCSwiftPackageProductDependency section */

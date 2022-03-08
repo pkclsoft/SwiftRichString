@@ -30,7 +30,11 @@
 
 import Foundation
 
+#if os(watchOS)
+import UIKit
+#else
 import UXKit
+#endif
 import CoreGraphics
 
 public enum SystemFonts: String, FontConvertible {
