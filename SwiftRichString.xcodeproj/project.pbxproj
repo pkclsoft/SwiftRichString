@@ -242,9 +242,7 @@
 		8933C78E1EB5B82C000D00A4 /* SwiftRichStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* SwiftRichStringTests.swift */; };
 		8933C78F1EB5B82C000D00A4 /* SwiftRichStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* SwiftRichStringTests.swift */; };
 		8933C7901EB5B82D000D00A4 /* SwiftRichStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* SwiftRichStringTests.swift */; };
-		D06CCC0327D6318F0029A682 /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D06CCC0227D6318F0029A682 /* UXKit */; };
-		D06CCC0527D631D20029A682 /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D06CCC0427D631D20029A682 /* UXKit */; };
-		D06CCC0727D631D80029A682 /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D06CCC0627D631D80029A682 /* UXKit */; };
+		D05A6C5F27D6E81500405E7E /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D05A6C5E27D6E81500405E7E /* UXKit */; };
 		D53F4E7B21F03E690085D26F /* DynamicText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53F4E7A21F03E690085D26F /* DynamicText.swift */; };
 		D53F4E7C21F03EEE0085D26F /* DynamicText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53F4E7A21F03E690085D26F /* DynamicText.swift */; };
 		D53F4E7D21F03EEF0085D26F /* DynamicText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53F4E7A21F03E690085D26F /* DynamicText.swift */; };
@@ -398,7 +396,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D06CCC0327D6318F0029A682 /* UXKit in Frameworks */,
+				D05A6C5F27D6E81500405E7E /* UXKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +419,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D06CCC0727D631D80029A682 /* UXKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +426,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D06CCC0527D631D20029A682 /* UXKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,7 +739,7 @@
 			);
 			name = "SwiftRichString-iOS";
 			packageProductDependencies = (
-				D06CCC0227D6318F0029A682 /* UXKit */,
+				D05A6C5E27D6E81500405E7E /* UXKit */,
 			);
 			productName = SwiftRichString;
 			productReference = 52D6D97C1BEFF229002C0205 /* SwiftRichString.framework */;
@@ -803,7 +799,6 @@
 			);
 			name = "SwiftRichString-tvOS";
 			packageProductDependencies = (
-				D06CCC0627D631D80029A682 /* UXKit */,
 			);
 			productName = "SwiftRichString-tvOS";
 			productReference = 52D6D9F01BEFFFBE002C0205 /* SwiftRichString.framework */;
@@ -825,7 +820,6 @@
 			);
 			name = "SwiftRichString-macOS";
 			packageProductDependencies = (
-				D06CCC0427D631D20029A682 /* UXKit */,
 			);
 			productName = "SwiftRichString-macOS";
 			productReference = 52D6DA0F1BF000BD002C0205 /* SwiftRichString.framework */;
@@ -1033,7 +1027,7 @@
 			);
 			mainGroup = 52D6D9721BEFF229002C0205;
 			packageReferences = (
-				D06CCC0127D6318F0029A682 /* XCRemoteSwiftPackageReference "UXKit" */,
+				D05A6C5D27D6E81500405E7E /* XCRemoteSwiftPackageReference "UXKit" */,
 			);
 			productRefGroup = 52D6D97D1BEFF229002C0205 /* Products */;
 			projectDirPath = "";
@@ -2460,6 +2454,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D05A6C5D27D6E81500405E7E /* XCRemoteSwiftPackageReference "UXKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkclsoft/UXKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.10.1;
+			};
+		};
 		D06CCC0127D6318F0029A682 /* XCRemoteSwiftPackageReference "UXKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pkclsoft/UXKit.git";
@@ -2471,19 +2473,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D06CCC0227D6318F0029A682 /* UXKit */ = {
+		D05A6C5E27D6E81500405E7E /* UXKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D06CCC0127D6318F0029A682 /* XCRemoteSwiftPackageReference "UXKit" */;
-			productName = UXKit;
-		};
-		D06CCC0427D631D20029A682 /* UXKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D06CCC0127D6318F0029A682 /* XCRemoteSwiftPackageReference "UXKit" */;
-			productName = UXKit;
-		};
-		D06CCC0627D631D80029A682 /* UXKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D06CCC0127D6318F0029A682 /* XCRemoteSwiftPackageReference "UXKit" */;
+			package = D05A6C5D27D6E81500405E7E /* XCRemoteSwiftPackageReference "UXKit" */;
 			productName = UXKit;
 		};
 		D06CCC0827D632170029A682 /* UXKit */ = {
