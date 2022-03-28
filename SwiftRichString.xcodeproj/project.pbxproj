@@ -243,6 +243,8 @@
 		8933C78F1EB5B82C000D00A4 /* SwiftRichStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* SwiftRichStringTests.swift */; };
 		8933C7901EB5B82D000D00A4 /* SwiftRichStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* SwiftRichStringTests.swift */; };
 		D05A6C5F27D6E81500405E7E /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D05A6C5E27D6E81500405E7E /* UXKit */; };
+		D0965BEF27D84B080058A40E /* file.txt in Resources */ = {isa = PBXBuildFile; fileRef = 64774AD2213E91B9008F8DC3 /* file.txt */; };
+		D0965BF027D84B090058A40E /* file.txt in Resources */ = {isa = PBXBuildFile; fileRef = 64774AD2213E91B9008F8DC3 /* file.txt */; };
 		D09C613727D814DA0008C829 /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D09C613627D814DA0008C829 /* UXKit */; };
 		D09C613F27D81C940008C829 /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D09C613E27D81C940008C829 /* UXKit */; };
 		D09C614127D81CA80008C829 /* UXKit in Frameworks */ = {isa = PBXBuildFile; productRef = D09C614027D81CA80008C829 /* UXKit */; };
@@ -1094,6 +1096,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64507EE520B18F11009455BD /* Assets.xcassets in Resources */,
+				D0965BF027D84B090058A40E /* file.txt in Resources */,
 				64507EE320B18F0F009455BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1131,6 +1134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				648932FC209DE6C5000E691A /* Assets.xcassets in Resources */,
+				D0965BEF27D84B080058A40E /* file.txt in Resources */,
 				648932FF209DE6C5000E691A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
