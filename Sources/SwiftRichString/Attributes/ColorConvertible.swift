@@ -63,25 +63,30 @@ extension Color: ColorConvertible {
 		let scanner   = Scanner(string: hexString)
 		
 		if hexString.hasPrefix("#") {
-			scanner.scanLocation = 1
+            if #available(iOS 13.0, macOS 10.15, *) {
+                scanner.currentIndex = hexString.offset(by: 1)!
+            } else {
+                // Fallback on earlier versions
+                scanner.scanLocation = 1
+            }
 		}
 		
-		var color: UInt32 = 0
+		var color: UInt64 = 0
 		
-		if scanner.scanHexInt32(&color) {
+		if scanner.scanHexInt64(&color) {
 			self.init(hex: color, useAlpha: hexString.count > 7)
 		} else {
 			self.init(hex: 0x000000)
 		}
 	}
 	
-	/// Initialize a new color from HEX string as UInt32 with optional alpha chanell.
+	/// Initialize a new color from HEX as UInt64 with optional alpha chanell.
 	///
 	/// - Parameters:
 	///   - hex: hex value
 	///   - alphaChannel: `true` to include alpha channel, `false` to make it opaque.
-	public convenience init(hex: UInt32, useAlpha alphaChannel: Bool = false) {
-		let mask = UInt32(0xFF)
+	public convenience init(hex: UInt64, useAlpha alphaChannel: Bool = false) {
+		let mask = UInt64(0xFF)
 		
 		let r = hex >> (alphaChannel ? 24 : 16) & mask
 		let g = hex >> (alphaChannel ? 16 : 8) & mask
