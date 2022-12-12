@@ -63,7 +63,7 @@ extension Color: ColorConvertible {
 		let scanner   = Scanner(string: hexString)
 		
 		if hexString.hasPrefix("#") {
-            if #available(iOS 13.0, macOS 10.15, *) {
+            if #available(iOS 13.0, tvOS 13.0, macOS 10.15, *) {
                 scanner.currentIndex = hexString.offset(by: 1)!
             } else {
                 // Fallback on earlier versions

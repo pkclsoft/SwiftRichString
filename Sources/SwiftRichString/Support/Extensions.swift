@@ -135,9 +135,19 @@ public extension NSImage {
     /// PNG data of the image.
     func pngData() -> Data? {
         self.lockFocus()
-        let bitmap = NSBitmapImageRep(focusedViewRect: NSRect(x: 0, y: 0, width: size.width, height: size.height))
-        let pngData = bitmap!.representation(using: .png, properties: [:])
+        
+        let view = NSImageView(image: self)
+        let bitmapRect = NSRect(x: 0, y: 0, width: size.width, height: size.height)
+        let pngData : Data?
+        
+        if let bitmap = view.bitmapImageRepForCachingDisplay(in: bitmapRect) {
+            view.cacheDisplay(in: bitmapRect, to: bitmap)
+            pngData = bitmap.representation(using: .png, properties: [:])
+        } else {
+            pngData = nil
+        }
         self.unlockFocus()
+        
         return pngData
     }
     
