@@ -242,7 +242,7 @@ public struct FontData {
         }
         
         #if os(OSX) || os(iOS) || os(tvOS)
-        return (fontMetrics ?? UIFontMetrics.default).scaledFont(for: font, maximumPointSize: dynamicText?.maximumSize ?? 0.0, compatibleWith: dynamicText?.traitCollection)
+        return (fontMetrics ?? UIFontMetrics.default).scaledFont(for: font, maximumPointSize: dynamicText?.maximumSize ?? 0.0, compatibleWith: dynamicText?.traits)
         #else
         return (fontMetrics ?? UIFontMetrics.default).scaledFont(for: font, maximumPointSize: dynamicText?.maximumSize ?? 0.0)
         #endif

@@ -37,6 +37,12 @@ import Foundation
 
 import CoreText
 
+#if os(OSX)
+import AppKit
+#else
+import UIKit
+#endif
+
 /// Protocol to provide values to be used by `UIFontFeatureTypeIdentifierKey`
 /// and `UIFontFeatureSelectorIdentifierKey`. You can typically find these
 /// values in CoreText.SFNTLayoutTypes.

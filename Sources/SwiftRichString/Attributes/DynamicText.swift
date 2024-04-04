@@ -42,7 +42,7 @@ public class DynamicText {
     #if os(OSX) || os(iOS) || os(tvOS)
     /// The trait collection to use when determining compatibility. The returned
     /// font is appropriate for use in an interface that adopts the specified traits.
-    public var traitCollection: UITraitCollection?
+    public var traits: UITraitCollection?
     #endif
     
     /// Set the maximum size
