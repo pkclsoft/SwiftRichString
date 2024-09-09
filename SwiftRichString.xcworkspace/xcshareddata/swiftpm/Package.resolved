@@ -1,16 +1,15 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "UXKit",
-        "repositoryURL": "https://github.com/pkclsoft/UXKit.git",
-        "state": {
-          "branch": "feature/accessibility",
-          "revision": "1f59f5df605050165b8a1e143bd4c7283cc91da8",
-          "version": null
-        }
+  "originHash" : "c8c1a5a367c67b1b5babdc9f630d233c75c0415f30b8f4e329a2e0c07984f843",
+  "pins" : [
+    {
+      "identity" : "uxkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pkclsoft/UXKit.git",
+      "state" : {
+        "revision" : "0602b785cdfcced0a6143ad365e76ef285e899b9",
+        "version" : "0.10.1"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 3
 }

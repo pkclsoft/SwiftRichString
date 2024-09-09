@@ -125,9 +125,33 @@ open class StandardXMLAttributesResolver: XMLDynamicAttributesResolver {
                 #if os(iOS) || os(OSX)
                 // Local Image support
                 if let imageName = attributes?["named"] {
-                    if let image = image(name: imageName, attributes: attributes, fromStyle: fromStyle),
-                        let imageString = AttributedString(image: image, bounds: attributes?["rect"]) {
-                        attributedString.append(imageString)
+                    if let image = image(name: imageName, attributes: attributes, fromStyle: fromStyle) {
+                        
+                        let fontDescender : CGFloat
+                        
+                        if let vertAlign = attributes?["verticalAlign"] as? String {
+                            if vertAlign == "descender" {
+                                if let fontData = fromStyle.fontData,
+                                   let font = fontData.font,
+                                   let size = fontData.size {
+                                    fontDescender = font.font(size: size).descender
+                                } else if let fontData = fromStyle.baseStyle?.fontData,
+                                          let font = fontData.font,
+                                          let size = fontData.size {
+                                    fontDescender = font.font(size: size).descender
+                                } else {
+                                    fontDescender = 0.0
+                                }
+                            } else {
+                                fontDescender = 0.0
+                            }
+                        } else {
+                            fontDescender = 0.0
+                        }
+
+                        if let imageString = AttributedString(image: image, bounds: attributes?["rect"], descender: fontDescender) {
+                            attributedString.append(imageString)
+                        }
                     }
                 }
                 #endif

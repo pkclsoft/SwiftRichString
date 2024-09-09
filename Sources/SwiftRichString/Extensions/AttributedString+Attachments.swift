@@ -36,6 +36,26 @@ import AppKit
 import UIKit
 #endif
 
+// This solution was taken from https://petehare.com/inline-nstextattachment-rendering-in-uitextview/
+// in an attempt to provide a way to align images vertically with the text surrounding them.
+public class InilineTextAttachment: NSTextAttachment {
+    
+    /// Set this to the value of Font.descender in order to align the bottom of the image with the bottom of the text being rendered around
+    /// the image attachment.  Defaults to 0.0, leaving the image vertical alignment alone.
+    public var fontDescender: CGFloat = 0.0
+    
+    public override func attachmentBounds(
+        for textContainer: NSTextContainer?,
+        proposedLineFragment lineFrag: CGRect,
+        glyphPosition position: CGPoint,
+        characterIndex charIndex: Int) -> CGRect {
+            var superRect = super.attachmentBounds(for: textContainer, proposedLineFragment: lineFrag, glyphPosition: position, characterIndex: charIndex)
+            superRect.origin.y = self.fontDescender
+            
+            return superRect
+    }
+    
+}
 public extension AttributedString {
     
     #if os(iOS)
@@ -84,37 +104,47 @@ public extension AttributedString {
     /// - Parameters:
     ///   - image: image to use.
     ///   - bounds: location and size of the image, if `nil` the default bounds is applied.
-    convenience init?(image: Image?, bounds: String? = nil) {
+    convenience init?(image: Image?, bounds: String? = nil, descender: CGFloat = 0.0) {
         guard let image = image else {
             return nil
         }
         
+        var imageBounds: CGRect = CGRect(origin: .zero, size: image.size)
+        
+        var finalImage: Image = image
+        
+        if let boundsRect = CGRect(string: bounds) {
+            imageBounds = boundsRect
+        }
+
         #if os(OSX)
-        let attachment = NSTextAttachment(data: image.pngData()!, ofType: "png")
+        if imageBounds.size != image.size {
+            finalImage.size = imageBounds.size
+        }
+        
+        let attachment = InilineTextAttachment()
+        attachment.image = finalImage
         #else
-        var attachment: NSTextAttachment!
+        var attachment: InilineTextAttachment!
+        
+        if imageBounds.size != image.size {
+            finalImage = image.resized(to: imageBounds.size)
+        }
+        
         if #available(iOS 13.0, *) {
-            // Due to a bug (?) in UIKit we should use two methods to allocate the text attachment
-            // in order to render the image as template or original. If we use the
-            // NSTextAttachment(image: image) with a .alwaysOriginal rendering mode it will be
-            // ignored.
-            if image.renderingMode == .alwaysTemplate {
-                attachment = NSTextAttachment(image: image)
-            } else {
-                attachment =  NSTextAttachment()
-                attachment.image = image.withRenderingMode(.alwaysOriginal)
-            }
+            attachment = InilineTextAttachment(image: finalImage)
         } else {
             // It does not work on iOS12, return empty set.s
             // attachment = NSTextAttachment(data: image.pngData()!, ofType: "png")
-            attachment =  NSTextAttachment()
-            attachment.image = image.withRenderingMode(.alwaysOriginal)
+            attachment =  InilineTextAttachment()
+            attachment.image = finalImage.withRenderingMode(.alwaysOriginal)
         }
         #endif
         
-        if let boundsRect = CGRect(string: bounds) {
-            attachment.bounds = boundsRect
-        }
+        attachment.bounds = imageBounds
+
+        // align the image attachment vertically so that it sits on the bottom of the text line (not the baseline).
+        attachment.fontDescender = descender
         
         self.init(attachment: attachment)
     }
