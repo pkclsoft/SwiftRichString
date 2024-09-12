@@ -30,7 +30,7 @@
 
 import Foundation
 
-#if os(OSX)
+#if os(macOS)
 import AppKit
 #else
 import UIKit
@@ -58,7 +58,7 @@ public class InlineTextAttachment: NSTextAttachment {
 }
 public extension AttributedString {
     
-    #if os(iOS)
+    #if os(iOS) || os(tvOS)
 
     /// Initialize a new text attachment with a remote image resource.
     /// Image will be loaded asynchronously after the text appear inside the control.
@@ -83,7 +83,7 @@ public extension AttributedString {
     
     #endif
     
-    #if os(iOS) || os(OSX)
+    #if !os(watchOS)
 
     /// Initialize a new text attachment with local image contained into the assets.
     ///
@@ -117,7 +117,7 @@ public extension AttributedString {
             imageBounds = boundsRect
         }
 
-        #if os(OSX)
+        #if os(macOS)
         if imageBounds.size != image.size {
             finalImage.size = imageBounds.size
         }

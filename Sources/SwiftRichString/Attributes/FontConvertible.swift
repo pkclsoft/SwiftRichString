@@ -30,7 +30,7 @@
 
 import Foundation
 
-#if os(OSX)
+#if os(macOS)
 import AppKit
 #else
 import UIKit

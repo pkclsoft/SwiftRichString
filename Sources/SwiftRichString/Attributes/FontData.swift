@@ -30,7 +30,7 @@
 
 import Foundation
 import Foundation
-#if os(OSX)
+#if os(macOS)
 import AppKit
 #else
 import UIKit
@@ -61,7 +61,7 @@ public struct FontData {
 	/// Size of the font
 	var size: CGFloat? { didSet { self.style?.invalidateCache() } }
 	
-	#if os(OSX) || os(iOS) || os(tvOS)
+	#if os(macOS) || os(iOS) || os(tvOS)
 	
 	/// Configuration for the number case, also known as "figure style".
 	var numberCase: NumberCase? { didSet { self.style?.invalidateCache() } }
@@ -177,7 +177,7 @@ public struct FontData {
 		guard var finalFont = (self.font ?? currentFont)?.font(size: size) else { return [:] }
 		
 		// compose the attributes
-		#if os(iOS) || os(tvOS) || os(OSX)
+		#if os(iOS) || os(tvOS) || os(macOS)
 		var attributes: [FontInfoAttribute] = []
 
         attributes += [self.numberCase].compactMap { $0 }
@@ -202,7 +202,7 @@ public struct FontData {
 			// optional on Mac, but not on iOS.
 			let newDescriptor: FontDescriptor? = descriptor.withSymbolicTraits(newTraits)
 			if let newDesciptor = newDescriptor {
-				#if os(OSX)
+				#if os(macOS)
 				finalFont = Font(descriptor: newDesciptor, size: 0)!
 				#else
 				finalFont = Font(descriptor: newDesciptor, size: 0)
@@ -241,7 +241,7 @@ public struct FontData {
             fontMetrics = UIFontMetrics(forTextStyle: textStyle)
         }
         
-        #if os(OSX) || os(iOS) || os(tvOS)
+        #if os(macOS) || os(iOS) || os(tvOS)
         return (fontMetrics ?? UIFontMetrics.default).scaledFont(for: font, maximumPointSize: dynamicText?.maximumSize ?? 0.0, compatibleWith: dynamicText?.traits)
         #else
         return (fontMetrics ?? UIFontMetrics.default).scaledFont(for: font, maximumPointSize: dynamicText?.maximumSize ?? 0.0)

@@ -28,14 +28,14 @@
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //    THE SOFTWARE.
 
-#if os(OSX)
+#if os(macOS)
 import AppKit
 #else
 import UIKit
 import MobileCoreServices
 #endif
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 
 @objc public protocol AsyncTextAttachmentDelegate
 {

@@ -29,13 +29,13 @@
 //	THE SOFTWARE.
 
 import Foundation
-#if os(OSX)
+#if os(macOS)
 import AppKit
 #else
 import UIKit
 #endif
 
-#if os(OSX)
+#if os(macOS)
 #if swift(>=4.2)
 #else
 public typealias NSLineBreakMode = NSParagraphStyle.LineBreakMode

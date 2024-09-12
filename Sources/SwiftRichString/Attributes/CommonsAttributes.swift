@@ -33,7 +33,7 @@ import CoreGraphics
 
 //MARK: - Typealiases
 
-#if os(OSX)
+#if os(macOS)
 	import AppKit
 
 	public typealias Color = NSColor
@@ -103,7 +103,7 @@ public enum Kerning {
 public enum Ligatures: Int {
 	case disabled = 0
 	case defaults = 1
-	#if os(OSX)
+	#if os(macOS)
 	case all = 2
 	#endif
 }

@@ -29,7 +29,7 @@
 //	THE SOFTWARE.
 
 import Foundation
-#if os(OSX)
+#if os(macOS)
 import AppKit
 #else
 import UIKit
@@ -128,7 +128,7 @@ extension CGRect {
     
 }
 
-#if os(OSX)
+#if os(macOS)
 
 public extension NSImage {
     

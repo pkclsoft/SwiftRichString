@@ -39,7 +39,7 @@ public class DynamicText {
     /// which uses the body text style.
     public var style: UIFont.TextStyle?
     
-    #if os(OSX) || os(iOS) || os(tvOS)
+    #if os(macOS) || os(iOS) || os(tvOS)
     /// The trait collection to use when determining compatibility. The returned
     /// font is appropriate for use in an interface that adopts the specified traits.
     public var traits: UITraitCollection?

@@ -29,7 +29,7 @@
 //    THE SOFTWARE.
 
 import Foundation
-#if os(OSX)
+#if os(macOS)
 import AppKit
 #else
 import UIKit
@@ -113,7 +113,7 @@ open class StandardXMLAttributesResolver: XMLDynamicAttributesResolver {
                 finalStyleToApply.linkURL = URL(string: attributes?["href"])
             
             case "img":
-                #if os(iOS)
+                #if !os(macOS)
                 // Remote Image URL support
                 if let url = attributes?["url"] {
                     if let image = AttributedString(imageURL: url, bounds: attributes?["rect"]) {
@@ -122,7 +122,6 @@ open class StandardXMLAttributesResolver: XMLDynamicAttributesResolver {
                 }
                 #endif
                 
-                #if os(iOS) || os(OSX)
                 // Local Image support
                 if let imageName = attributes?["named"] {
                     if let image = image(name: imageName, attributes: attributes, fromStyle: fromStyle) {
@@ -154,7 +153,6 @@ open class StandardXMLAttributesResolver: XMLDynamicAttributesResolver {
                         }
                     }
                 }
-                #endif
             
             default:
                 break

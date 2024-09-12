@@ -33,11 +33,11 @@
 import Foundation
 
 // This is not supported on watchOS
-#if os(iOS) || os(tvOS) || os(OSX)
+#if os(iOS) || os(tvOS) || os(macOS)
 
 import CoreText
 
-#if os(OSX)
+#if os(macOS)
 import AppKit
 #else
 import UIKit
@@ -86,7 +86,7 @@ internal extension Font {
 		fontAttributes[FontDescriptorFeatureSettingsAttribute] = features
 		
 		let descriptor = FontDescriptor(fontAttributes: fontAttributes)
-		#if os(OSX)
+		#if os(macOS)
 			return Font(descriptor: descriptor, size: pointSize)!
 		#else
 			return Font(descriptor: descriptor, size: pointSize)
