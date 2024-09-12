@@ -38,7 +38,7 @@ import UIKit
 
 // This solution was taken from https://petehare.com/inline-nstextattachment-rendering-in-uitextview/
 // in an attempt to provide a way to align images vertically with the text surrounding them.
-public class InilineTextAttachment: NSTextAttachment {
+public class InlineTextAttachment: NSTextAttachment {
     
     /// Set this to the value of Font.descender in order to align the bottom of the image with the bottom of the text being rendered around
     /// the image attachment.  Defaults to 0.0, leaving the image vertical alignment alone.
@@ -122,23 +122,17 @@ public extension AttributedString {
             finalImage.size = imageBounds.size
         }
         
-        let attachment = InilineTextAttachment()
+        let attachment = InlineTextAttachment()
         attachment.image = finalImage
         #else
-        var attachment: InilineTextAttachment!
+        var attachment: InlineTextAttachment
         
         if imageBounds.size != image.size {
             finalImage = image.resized(to: imageBounds.size)
         }
         
-        if #available(iOS 13.0, *) {
-            attachment = InilineTextAttachment(image: finalImage)
-        } else {
-            // It does not work on iOS12, return empty set.s
-            // attachment = NSTextAttachment(data: image.pngData()!, ofType: "png")
-            attachment =  InilineTextAttachment()
-            attachment.image = finalImage.withRenderingMode(.alwaysOriginal)
-        }
+        attachment =  InlineTextAttachment()
+        attachment.image = finalImage.withRenderingMode(.alwaysOriginal)
         #endif
         
         attachment.bounds = imageBounds
