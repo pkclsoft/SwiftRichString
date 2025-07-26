@@ -442,7 +442,7 @@ public class Style: StyleProtocol {
 		get { return self.get(attributeForKey: .link) }
 	}
 	
-	#if os(OSX) || os(iOS) || os(tvOS)
+	#if os(OSX) || os(iOS) || os(tvOS) || os(visionOS)
 	
 	///  Configuration for the number case, also known as "figure style".
 	/// **Note**: in order to be used you must also set the `.font`/`.size` attribute of the style.
