@@ -35,7 +35,7 @@ import UIKit
 import MobileCoreServices
 #endif
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 
 @objc public protocol AsyncTextAttachmentDelegate
 {

@@ -58,7 +58,7 @@ public class InlineTextAttachment: NSTextAttachment {
 }
 public extension AttributedString {
     
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
 
     /// Initialize a new text attachment with a remote image resource.
     /// Image will be loaded asynchronously after the text appear inside the control.

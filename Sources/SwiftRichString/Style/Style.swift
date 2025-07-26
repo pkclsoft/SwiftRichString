@@ -342,7 +342,7 @@ public class Style: StyleProtocol {
 		}
 	}
 	
-	#if os(iOS) || os(tvOS) || os(macOS)
+	#if os(iOS) || os(tvOS) || os(macOS) || os(visionOS)
 
 	/// The value of this attribute is an `NSShadow` object. The default value of this property is nil.
 	public var shadow: NSShadow? {
@@ -356,7 +356,7 @@ public class Style: StyleProtocol {
 
 	#endif
 	
-	#if os(iOS) || os(tvOS) || os(watchOS)
+	#if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
 	
 	/// Enable spoken of all punctuation in the text.
 	public var speaksPunctuation: Bool? {

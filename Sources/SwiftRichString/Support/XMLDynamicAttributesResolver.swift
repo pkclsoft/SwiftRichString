@@ -113,7 +113,13 @@ open class StandardXMLAttributesResolver: XMLDynamicAttributesResolver {
                 finalStyleToApply.linkURL = URL(string: attributes?["href"])
             
             case "img":
-                #if !os(macOS)
+                #if os(visionOS)
+                if let url = attributes?["url"] {
+                    if let image = AttributedString(imageNamed: url, bounds: attributes?["rect"]) {
+                        attributedString.append(image)
+                    }
+                }
+                #elseif !os(macOS)
                 // Remote Image URL support
                 if let url = attributes?["url"] {
                     if let image = AttributedString(imageURL: url, bounds: attributes?["rect"]) {

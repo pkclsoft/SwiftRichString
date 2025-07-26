@@ -204,7 +204,7 @@ extension TraitVariant {
 //MARK: - Symbolic Traits (UIFontDescriptorSymbolicTraits) Extensions
 
 extension SymbolicTraits {
-	#if os(iOS) || os(tvOS) || os(watchOS)
+	#if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
 	static var italic: SymbolicTraits {
 		return .traitItalic
 	}

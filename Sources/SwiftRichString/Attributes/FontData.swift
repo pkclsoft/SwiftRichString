@@ -61,7 +61,7 @@ public struct FontData {
 	/// Size of the font
 	var size: CGFloat? { didSet { self.style?.invalidateCache() } }
 	
-	#if os(macOS) || os(iOS) || os(tvOS)
+	#if os(macOS) || os(iOS) || os(tvOS) || os(visionOS)
 	
 	/// Configuration for the number case, also known as "figure style".
 	var numberCase: NumberCase? { didSet { self.style?.invalidateCache() } }
@@ -177,7 +177,7 @@ public struct FontData {
 		guard var finalFont = (self.font ?? currentFont)?.font(size: size) else { return [:] }
 		
 		// compose the attributes
-		#if os(iOS) || os(tvOS) || os(macOS)
+		#if os(iOS) || os(tvOS) || os(macOS) || os(visionOS)
 		var attributes: [FontInfoAttribute] = []
 
         attributes += [self.numberCase].compactMap { $0 }
