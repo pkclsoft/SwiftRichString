@@ -133,24 +133,18 @@ extension CGRect {
 public extension NSImage {
     
     /// PNG data of the image.
+    ///
+    /// This updated version of this function comes from:
+    ///
+    /// https://levelup.gitconnected.com/swift-macos-nsimage-to-png-data-3f7d1543217b
+    ///
     func pngData() -> Data? {
-        self.lockFocus()
-        
-        let view = NSImageView(image: self)
-        let bitmapRect = NSRect(x: 0, y: 0, width: size.width, height: size.height)
-        let pngData : Data?
-        
-        if let bitmap = view.bitmapImageRepForCachingDisplay(in: bitmapRect) {
-            view.cacheDisplay(in: bitmapRect, to: bitmap)
-            pngData = bitmap.representation(using: .png, properties: [:])
-        } else {
-            pngData = nil
-        }
-        self.unlockFocus()
-        
-        return pngData
+        guard let cgImage = self.cgImage(forProposedRect: nil, context: nil, hints: nil) else { return nil }
+        let rep = NSBitmapImageRep(cgImage: cgImage)
+        rep.size = self.size
+        return rep.representation(using: .png, properties: [:])
     }
-    
+
 }
 
 #endif
